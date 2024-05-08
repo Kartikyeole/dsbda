@@ -1,0 +1,20 @@
+sudo hive 
+
+if hive not present then 
+create one folder on desktop 
+open terminal
+
+sudo su
+
+if it asks for password then type :cloudera(default password)
+
+cd /usr/lib/hive/conf/
+
+sudo gedit hive-site.xml
+
+after open this xml file vhange the folder name in following section
+
+<propert>
+<name> javax.jdo.option.ConnectionURL</name>
+<value>jdbc:derby:;databaseName=/home/Cloudera/Desktop/foldername/metastore/metastore_db;create=true</value>
+<description>.............

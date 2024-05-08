@@ -1,0 +1,205 @@
+first create java folder in that folder process create pacakge process and then create class process and padte the mapreduce code
+
+then add hadoop jar file build path-file system-usr-lib-hadoop and then mapreduce jar file in build path-file system-usr-lib-hadoop-mapreduce
+
+
+right click on program file click on export and then java and then jar file click next and then browse and change the jar file name to process.jar thenk ok. 
+
+
+
+
+
+
+[cloudera@quickstart ~]$ hadoop fs -put Desktop/process.txt
+
+
+[cloudera@quickstart ~]$ hadoop jar process.jar process.process process.txt dir 
+24/05/03 22:51:00 INFO client.RMProxy: Connecting to ResourceManager at /0.0.0.0:8032
+24/05/03 22:51:02 WARN mapreduce.JobResourceUploader: Hadoop command-line option parsing not performed. Implement the Tool interface and execute your application with ToolRunner to remedy this.
+24/05/03 22:51:05 INFO input.FileInputFormat: Total input paths to process : 1
+24/05/03 22:51:08 INFO mapreduce.JobSubmitter: number of splits:1
+24/05/03 22:51:10 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1714763295621_0005
+24/05/03 22:51:11 INFO impl.YarnClientImpl: Submitted application application_1714763295621_0005
+24/05/03 22:51:11 INFO mapreduce.Job: The url to track the job: http://quickstart.cloudera:8088/proxy/application_1714763295621_0005/
+24/05/03 22:51:11 INFO mapreduce.Job: Running job: job_1714763295621_0005
+24/05/03 22:51:51 INFO mapreduce.Job: Job job_1714763295621_0005 running in uber mode : false
+24/05/03 22:51:51 INFO mapreduce.Job:  map 0% reduce 0%
+24/05/03 22:52:51 INFO mapreduce.Job:  map 100% reduce 0%
+24/05/03 22:53:19 INFO mapreduce.Job:  map 100% reduce 100%
+24/05/03 22:53:22 INFO mapreduce.Job: Job job_1714763295621_0005 completed successfully
+24/05/03 22:53:22 INFO mapreduce.Job: Counters: 49
+	File System Counters
+		FILE: Number of bytes read=2234
+		FILE: Number of bytes written=291223
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=75732
+		HDFS: Number of bytes written=1799
+		HDFS: Number of read operations=6
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=2
+	Job Counters 
+		Launched map tasks=1
+		Launched reduce tasks=1
+		Data-local map tasks=1
+		Total time spent by all maps in occupied slots (ms)=55535
+		Total time spent by all reduces in occupied slots (ms)=25450
+		Total time spent by all map tasks (ms)=55535
+		Total time spent by all reduce tasks (ms)=25450
+		Total vcore-milliseconds taken by all map tasks=55535
+		Total vcore-milliseconds taken by all reduce tasks=25450
+		Total megabyte-milliseconds taken by all map tasks=56867840
+		Total megabyte-milliseconds taken by all reduce tasks=26060800
+	Map-Reduce Framework
+		Map input records=1355
+		Map output records=678
+		Map output bytes=12099
+		Map output materialized bytes=2234
+		Input split bytes=122
+		Combine input records=678
+		Combine output records=113
+		Reduce input groups=113
+		Reduce shuffle bytes=2234
+		Reduce input records=113
+		Reduce output records=113
+		Spilled Records=226
+		Shuffled Maps =1
+		Failed Shuffles=0
+		Merged Map outputs=1
+		GC time elapsed (ms)=635
+		CPU time spent (ms)=3720
+		Physical memory (bytes) snapshot=448024576
+		Virtual memory (bytes) snapshot=3135401984
+		Total committed heap usage (bytes)=325058560
+	Shuffle Errors
+		BAD_ID=0
+		CONNECTION=0
+		IO_ERROR=0
+		WRONG_LENGTH=0
+		WRONG_MAP=0
+		WRONG_REDUCE=0
+	File Input Format Counters 
+		Bytes Read=75610
+	File Output Format Counters 
+		Bytes Written=1799
+
+
+
+
+[cloudera@quickstart ~]$ hadoop fs -cat dir/part-r-00000
+10.1.232.31	5
+10.102.101.66	1
+10.103.190.81	53
+10.103.63.29	1
+10.104.73.51	1
+10.105.160.183	1
+10.108.91.151	1
+10.109.21.76	1
+10.11.131.40	1
+10.111.71.20	8
+10.112.227.184	6
+10.114.74.30	1
+10.118.19.97	1
+10.119.117.132	23
+10.119.33.245	1
+10.119.74.120	1
+10.12.219.30	1
+10.123.124.47	1
+10.124.148.99	1
+10.128.11.75	10
+10.130.195.163	8
+10.132.19.125	2
+10.133.222.184	12
+10.134.110.196	13
+10.134.242.87	1
+10.141.221.57	5
+10.143.126.177	31
+10.144.147.8	1
+10.15.23.44	13
+10.150.212.239	14
+10.153.23.63	2
+10.153.239.5	25
+10.156.152.9	1
+10.164.49.105	8
+10.167.1.145	19
+10.169.158.88	1
+10.170.178.53	1
+10.175.149.65	1
+10.175.204.125	15
+10.179.107.170	2
+10.185.152.140	1
+10.187.129.140	6
+10.187.177.220	1
+10.187.28.68	1
+10.190.41.42	5
+10.2.202.135	1
+10.200.9.128	2
+10.203.194.139	10
+10.205.72.238	2
+10.206.108.96	2
+10.206.175.236	1
+10.207.190.45	17
+10.208.38.46	1
+10.209.54.187	3
+10.211.47.159	10
+10.212.122.173	1
+10.213.181.38	7
+10.214.35.48	1
+10.215.222.114	1
+10.216.113.172	48
+10.216.227.195	9
+10.218.16.176	8
+10.220.112.1	15
+10.223.157.186	11
+10.225.137.152	1
+10.225.234.46	1
+10.229.60.23	1
+10.231.55.231	1
+10.236.231.63	1
+10.239.100.52	1
+10.239.52.68	4
+10.24.150.4	5
+10.24.67.131	13
+10.240.144.183	1
+10.240.170.50	1
+10.241.107.75	1
+10.243.51.109	5
+10.245.208.15	20
+10.246.151.162	2
+10.247.175.65	1
+10.248.24.219	1
+10.25.132.238	2
+10.25.44.247	6
+10.250.166.232	1
+10.27.134.23	1
+10.32.247.175	4
+10.32.55.216	12
+10.33.181.9	8
+10.34.233.107	1
+10.36.200.176	1
+10.4.59.153	1
+10.48.81.158	5
+10.5.132.217	1
+10.5.148.29	1
+10.53.58.58	1
+10.54.49.229	1
+10.59.42.194	11
+10.61.161.218	1
+10.61.23.77	8
+10.62.78.165	2
+10.70.238.46	6
+10.73.238.200	1
+10.76.143.30	1
+10.80.10.131	10
+10.81.134.180	1
+10.82.30.199	63
+10.82.64.235	1
+10.84.236.242	1
+10.87.88.214	1
+10.88.204.177	1
+10.89.244.42	1
+10.94.196.42	1
+10.95.136.211	4
+[cloudera@quickstart ~]$ 
+
